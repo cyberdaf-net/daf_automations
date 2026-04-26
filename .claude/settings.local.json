@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c \"import fitz; print\\('pymupdf ok'\\)\")",
+      "Bash(python3 -c \"from pdf2image import convert_from_path; print\\('pdf2image ok'\\)\")",
+      "Bash(mkdir -p \"outputs/M1 - 2.2 Evaluación del impacto y priorización de proyectos \\(Ángel Barbero\\)/attachments\")",
+      "Bash(mkdir -p \"outputs/M1 - 2.3 Niveles de madurez en adopción de IA/attachments\")",
+      "Bash(python3)",
+      "Bash(python3 -)",
+      "Bash(python3 -c ' *)",
+      "Bash(pip3 install *)",
+      "Bash(python3 convert_pdfs.py)",
+      "Bash(python3 split_markdown.py)",
+      "Bash(pip install *)",
+      "Bash(python3 -c \"import fitz; print\\('fitz ok'\\)\")",
+      "Bash(python3 -c \"import pytesseract; print\\('pytesseract ok'\\)\")",
+      "Bash(brew install *)"
+    ]
+  }
+}
