@@ -3,8 +3,6 @@
     "allow": [
       "Bash(python3 -c \"import fitz; print\\('pymupdf ok'\\)\")",
       "Bash(python3 -c \"from pdf2image import convert_from_path; print\\('pdf2image ok'\\)\")",
-      "Bash(mkdir -p \"outputs/M1 - 2.2 Evaluación del impacto y priorización de proyectos \\(Ángel Barbero\\)/attachments\")",
-      "Bash(mkdir -p \"outputs/M1 - 2.3 Niveles de madurez en adopción de IA/attachments\")",
       "Bash(python3)",
       "Bash(python3 -)",
       "Bash(python3 -c ' *)",
@@ -17,7 +15,15 @@
       "Bash(brew install *)",
       "Bash(python3 -m json.tool)",
       "Bash(npx playwright *)",
-      "Bash(python3 -c \"import playwright; print\\('playwright installed'\\)\")"
+      "Bash(python3 -c \"import playwright; print\\('playwright installed'\\)\")",
+      "Bash(npm list *)",
+      "Bash(node -e \"require\\('playwright'\\)\")",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_snapshot",
+      "mcp__playwright__browser_close",
+      "mcp__playwright__browser_click",
+      "mcp__playwright__browser_wait_for",
+      "mcp__playwright__browser_take_screenshot"
     ]
   }
 }

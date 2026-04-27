@@ -1,5 +1,8 @@
 # Summarize LinkedIn Posts
 
+> Important: Use the Playwright MCP browser tools directly (mcp__playwright__*). 
+> Do NOT write a Node.js script or install npm packages.
+
 Read `inputs/linkedin_posts.txt` to get the list of URLs.
 
 Then use the Playwright browser tool to:
@@ -13,11 +16,17 @@ Then use the Playwright browser tool to:
    - If the post is unavailable, note it and skip
 5. Write all results to `outputs/summaries.md` using this format:
 
----
-## [Author Name]
-**URL:** <url>
+**Author**: [Author Name]
+**URL:** <url>  
 **Date:** <date if visible>
-**Summary:** <2-3 sentence summary of the post>
----
 
-Confirm when done.
+<full post text here, preserving the original line breaks, paragraphs, bullet points, emojis and formatting exactly as they appear on LinkedIn>
+
+![image](images/author-name-1.jpg)
+
+<br>
+
+6. If ALL posts were processed successfully with no errors, delete the `.playwright-mcp` folder.
+   If ANY post failed or had an error, keep the `.playwright-mcp` folder for debugging.
+
+Confirm when done and let me know whether the debug folder was kept or deleted.
