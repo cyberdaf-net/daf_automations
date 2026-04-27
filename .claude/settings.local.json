@@ -14,7 +14,10 @@
       "Bash(pip install *)",
       "Bash(python3 -c \"import fitz; print\\('fitz ok'\\)\")",
       "Bash(python3 -c \"import pytesseract; print\\('pytesseract ok'\\)\")",
-      "Bash(brew install *)"
+      "Bash(brew install *)",
+      "Bash(python3 -m json.tool)",
+      "Bash(npx playwright *)",
+      "Bash(python3 -c \"import playwright; print\\('playwright installed'\\)\")"
     ]
   }
 }
