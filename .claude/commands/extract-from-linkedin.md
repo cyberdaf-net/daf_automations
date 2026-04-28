@@ -27,7 +27,7 @@ Then use the Playwright browser tool to:
 
 <full post text here, preserving the original line breaks, paragraphs, bullet points, emojis and formatting exactly as they appear on LinkedIn>
 
-![image](attachments/author-name-1.jpg)
+![[attachments/author-name-1.png]]
 
 > <OCR extracted text from the image, if any. If the image has no text, omit this block entirely>
 
