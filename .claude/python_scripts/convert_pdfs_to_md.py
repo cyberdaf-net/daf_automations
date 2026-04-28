@@ -81,7 +81,7 @@ def process_pdf(pdf_path):
                 if ocr_text:
                     ocr_count += 1
 
-                md_lines.append(f'![figure-{fig_count}](attachments/{fig_filename})')
+                md_lines.append(f'![[attachments/{fig_filename}]]')
                 if ocr_text:
                     quoted = '\n'.join(f'> {line}' for line in ocr_text.splitlines())
                     md_lines.append(quoted)
