@@ -83,7 +83,9 @@ def process_pdf(pdf_path):
 
                 md_lines.append(f'![figure-{fig_count}](attachments/{fig_filename})')
                 if ocr_text:
-                    md_lines.append(ocr_text)
+                    quoted = '\n'.join(f'> {line}' for line in ocr_text.splitlines())
+                    md_lines.append(quoted)
+                    # md_lines.append(ocr_text)
 
         md_lines.append('')  # page separator blank line
 
