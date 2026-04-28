@@ -1,7 +1,9 @@
-# Summarize LinkedIn Posts
+# Extract LinkedIn Posts
 
 > Important: Use the Playwright MCP browser tools directly (mcp__playwright__*). 
 > Do NOT write a Node.js script or install npm packages.
+> Use Obsidian wikilink format for embedding images: ![[attachments/short-title-1.png]]
+> Leave "# Related Notes" and "# Additional References" empty — these are for manual input.
 
 Read `inputs/linkedin_posts.txt` to get the list of URLs.
 
@@ -12,24 +14,48 @@ Then use the Playwright browser tool to:
 3. Wait for the home feed to confirm login succeeded
 4. For each URL in the list, do the following one at a time:
    - Navigate to the post
-   - Extract the author name, full post text, and any visible date
-   - If the post contains an image:
-     - Download it and save it as a PNG to `outputs/attachments/` with a filename based on the author name and post number (e.g. `john-doe-1.png`)
+   - Extract the author name, full post text, date, and any links found in the post body
+   - Create a single line title focusing on the problem the author is suggesting and trying to solve
+   - Create a short title with no more than 3 words to use as a reference for filenames (lowercase, hyphenated, e.g. `ai-knowledge-folder`)
+   - If a file with the same short title already exists in `outputs/`, append a number to disambiguate (e.g. `ai-knowledge-folder-2.md`)
+   - Select up to 10 keywords relevant to the post content, to make it easy to search
+   - If the post contains one or more images:
+     - Download each image and save it as a PNG to `outputs/attachments/` using the short title and image number as filename (e.g. `short-title-1.png`, `short-title-2.png`)
      - Convert to PNG if the original image is in a different format (e.g. jpg, webp)
-     - Inspect the image to check if it contains text
+     - Inspect each image to check if it contains text
      - If it does contain text, OCR the image and extract the text
    - If the post is unavailable, note it and skip
-   - Create an individual markdown file for the post in `outputs/` using the author name and date as filename (e.g. `john-doe-2026-04-27.md`) using this format:
+   - Create an individual markdown file in `outputs/` using the short title as filename (e.g. `short-title.md`) with this exact format:
 
-# [Author Name]
-**URL:** <url>  
-**Date:** <date if visible>
+---
+keywords: [keyword1, keyword2, ...]
+---
+# Notes
+
+## <single line title>
 
 <full post text here, preserving the original line breaks, paragraphs, bullet points, emojis and formatting exactly as they appear on LinkedIn>
 
-![[attachments/author-name-1.png]]
+![[attachments/short-title-1.png]]
 
-> <OCR extracted text from the image, if any. If the image has no text, omit this block entirely>
+> <OCR extracted text from the image, if any. Omit this block entirely if the image has no text>
+
+![[attachments/short-title-2.png]]
+
+> <OCR extracted text from the second image, if any. Omit if no text>
+
+---
+# Related Notes
+
+
+---
+# External Sources
+- [LinkedIn Post](<url>) - from [Author Name] - Published on: <date if visible>
+- <any other links found in the post body, one per line>
+
+---
+# Additional References
+
 
    - If the markdown file was created successfully, remove that URL from `inputs/linkedin_posts.txt`
    - If the markdown file failed, leave the URL in `inputs/linkedin_posts.txt` and continue with the next URL
